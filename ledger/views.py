@@ -5,7 +5,7 @@ from .models import Recipe
 def recipes_lists(request):
     recipes = Recipe.objects.all()
     ctx = {
-        'recipe': recipes
+        'recipes': recipes
     }
     return render(request, "ledger/recipes_list.html", ctx)
 
