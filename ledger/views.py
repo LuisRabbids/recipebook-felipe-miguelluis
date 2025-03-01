@@ -4,7 +4,10 @@ from .models import Recipe
 
 def recipes_lists(request):
     recipes = Recipe.objects.all()
-    return render(request, "ledger/recipes_list.html", {"recipes": recipes})
+    ctx = {
+        'recipe': recipes
+    }
+    return render(request, "ledger/recipes_list.html", ctx)
 
 
 def first_recipe(request):
