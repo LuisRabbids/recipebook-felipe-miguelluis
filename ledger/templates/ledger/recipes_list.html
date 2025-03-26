@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<body>
-    <header>
-        <h1>Recipe Book</h1>
-    </header>
-    <main>
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Recipes</h2>
+    <ul>
         {% for recipe in recipes %}
             <li>
                 <a href="{% url 'ledger:recipe_detail' recipe.id %}">{{ recipe.name }}</a>
             </li>
         {% endfor %}
-    </main>
-</body>
-</html>
+    </ul>
+{% endblock %}
