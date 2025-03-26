@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block page_title %}Recipe Details{% endblock %}
+
 {% block content %}
     <h2>{{ recipe.name }}</h2>
     <p>by {{ recipe.author.name }}</p>
