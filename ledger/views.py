@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .models import Recipe
 
 
+@login_required
 def recipes_lists(request):
     recipes = Recipe.objects.all()
     ctx = {
