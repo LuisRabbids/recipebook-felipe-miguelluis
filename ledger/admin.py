@@ -5,12 +5,12 @@ from .models import Recipe, Ingredient, RecipeIngredient, Profile
 
 
 class ProfileInline(admin.StackedInline):
-     model = Profile
-     can_delete = False
- 
- 
+    model = Profile
+    can_delete = False
+
+
 class UserAdmin(admin.BaseUserAdmin):
-     inlines = [ProfileInline,]
+    inlines = [ProfileInline,]
 
 
 class RecipeAdmin(admin.ModelAdmin):
