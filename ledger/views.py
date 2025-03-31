@@ -28,7 +28,7 @@ def add_recipe(request):
             recipe = form.save()
             recipe.author = request.user
             recipe.save()
-            return redirect("recipes:recipe-detail", pk=recipe.pk)
+            return redirect("ledger:recipe-detail", id=recipe.id)
 
     ctx = {"form": form}
-    return render(request, "recipes/add_recipe.html", ctx)
+    return render(request, "ledger/add_recipe.html", ctx)
