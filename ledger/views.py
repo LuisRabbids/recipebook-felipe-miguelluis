@@ -22,7 +22,7 @@ def recipe_detail(request, pk):
 @login_required
 def add_recipe(request):
     form = RecipeForm()
-    
+
     if request.method == "POST":
         form = RecipeForm(request.POST)
         if form.is_valid():
@@ -44,9 +44,9 @@ def add_recipe_image(request, pk):
         form = RecipeImageForm(request.POST, request.FILES)
         if form.is_valid():
             image = form.save()
-            image.recipe = recipe  
+            image.recipe = recipe
             image.save()
             return redirect("ledger:recipe-detail", pk=recipe.pk)
-        
+
     ctx = {"form": form, "recipe": recipe}
     return render(request, "ledger/add_recipe_image.html", ctx)
