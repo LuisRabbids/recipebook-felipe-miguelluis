@@ -27,8 +27,6 @@ def add_recipe(request):
         form = RecipeForm(request.POST)
         if form.is_valid():
             recipe = form.save()
-            recipe.author = request.user
-            recipe.save()
             return redirect("ledger:recipe-detail", pk=recipe.pk)
 
     ctx = {"form": form}
