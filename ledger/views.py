@@ -43,7 +43,7 @@ def add_recipe_image(request, pk):
     if request.method == "POST":
         form = RecipeImageForm(request.POST, request.FILES)
         if form.is_valid():
-            image = form.save()
+            image = form.save(commit=False)
             image.recipe = recipe
             image.save()
             return redirect("ledger:recipe-detail", pk=recipe.pk)
