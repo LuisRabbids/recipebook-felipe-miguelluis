@@ -15,4 +15,5 @@
     {% for image in recipe.images.all %}
         <img src="{{ image.recipe_image.url }}" alt="{{ image.description }}">
     {% endfor %}
+    <h3><a href="{% url 'ledger:add-recipe-image' recipe.id %}">Upload a New Image</a></h3>
 {% endblock %}
